@@ -11,4 +11,4 @@ I am summarizing biblatex and natbib packages. Items are arranged in alphabetica
 I compiled most commonly used standard referencing materials covering small fraction of 357 pages manual. Several non-standard referencing materials such as artwork, audio, bibnote, commetry, image, jurisdiction, legislation, legal, letter, movie, music etc. are excluded. Further the definitions of unfamiliar fields like eid, eprint, addeemdum, version, note, etc were also excluded.
 
 ## Disclaimer
-All contents in this document are taken from 357 page long [the biblatex package manual]([url](https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf))). Author only compiled essential parts of the manuals. Read original manual for detailed instructions, excluded items, guidelines, accuracy, and copyright information.
+All contents in this document are taken from 357 page long [the biblatex package manual](https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf). Author only compiled essential parts of the manuals. Read original manual for detailed instructions, excluded items, guidelines, accuracy, and copyright information.
