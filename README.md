@@ -1,7 +1,7 @@
 ## Abstract:
 This is a very short summary of the Biblatex package. It will provide quick and easy reference to compile a bibliography while writing scientific articles and manuscripts using LATEX. I summarized all required and optional fields for each standard bibliographic category listed in the manual. Soon, I will be adding a natbib package.
 
-##Introduction:
+## Introduction:
 Citing and reference is most crucial part in academic writing. Latex is very handy when its comes with organizing reference and citing articles with biblatex and natbib package. However, reading long manuals to figure out essential parts to include while referencing papers is time consuming. This file summarize all essential information necessary to cite all types of standard references available in biblatex package. I will expand this file later by adding natbib package.
 
 ## How to use?
