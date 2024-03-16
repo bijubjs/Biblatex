@@ -1,0 +1,912 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+
+\usepackage[]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks = true, allcolors = blue]{hyperref}
+\usepackage{biblatex}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{setspace}
+\usepackage{fontawesome5} 
+
+\geometry{letterpaper,
+          top = 2cm,
+          bottom = 2cm,
+          left = 3cm,
+          right = 3cm,
+          marginparwidth = 1.75cm}
+
+\setlength{\columnsep}{0.50in}
+%\setlength{\parskip}{1in}
+\title{Quick start guide to build bibliography using \LaTeX}
+\author{Bijesh Mishra, Ph.D.}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+\begin{document}
+\maketitle
+\begin{center}
+\faIcon{blog} \href{https://bijeshmishra.com/}{https://bijeshmishra.com/}
+\hspace{2cm} 
+\faIcon{at} \href{mailto:bijesh.mishra@okstate.edu}
+{bijesh.mishra@okstate.edu}
+\end{center}
+
+\begin{abstract}
+This is a very short summary of the Biblatex package. It will provide quick and easy reference to compile a bibliography while writing scientific articles and manuscripts using \LaTeX. I summarized all required and optional fields for each standard bibliographic category listed in the manual. Soon, I will be adding a natbib package.
+\end{abstract}
+
+\begin{multicols}{2}
+\section*{Introduction}
+Citing and reference is most crucial part in academic writing. Latex is very handy when its comes with organizing reference and citing articles with biblatex and natbib package. However, reading long manuals to figure out essential parts to include while referencing papers is time consuming. This file summarize all essential information necessary to cite all types of standard references available in biblatex package. I will expand this file later by adding natbib package.
+
+\section*{How to use?}
+I am summarizing biblatex and natbib packages. Items are arranged in alphabetical orders--following ordering in original documents--and grouped by packages making items easier to find. You can also click \textquotedblleft \textbf{Cltr + F}\textquotedblright in window or \textquotedblleft \textbf{Command + F}\textquotedblright in mac and search using keywords to find each items in this pdf quickly. I will list essential and optional elements by separating them with single line space.
+
+This file allow you to copy the code and use without adding additional code to work properly. Copying formats in this document is also easy. You can simply highlight code that you need and copy by clicking \textquotedblleft \textbf{Ctrl + C}\textquotedblright in Windows or \textquotedblleft \textbf{Command + C}\textquotedblright in Mac. You may see page numbers included if codes are spread in multiple pages--just delete the page number copied with code.
+
+If your author is institutional author you must do \textquotedblleft author = \{\{Name of Organizational Author\}\}\textquotedblright for full name of organizational to appear in the citation.
+
+\section*{What are not included?}
+I compiled most commonly used standard referencing materials covering small fraction of 357 pages manual. Several non-standard referencing materials such as artwork, audio, bibnote, commetry, image, jurisdiction, legislation, legal, letter, movie, music etc. are excluded. Further the definitions of unfamiliar fields like eid, eprint, addeemdum, version, note, etc were also excluded.
+
+\section*{Disclaimer} 
+All contents in this document are taken from 357 page long \href{https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf}{the biblatex package manual}. Dr. Mishra only compiled essential parts of the manuals. Read original manual for detailed instructions, excluded items, guidelines, accuracy, and copyright information.
+\end{multicols}
+
+\line(1,0){400} \\
+
+\newpage
+\begin{multicols}{2}
+
+\section*{Packages to Load:}
+\begin{verbatim}
+\usepackage{biblatex, natbib} %Bibs
+\usepackage{babel, polyglossia} %Language
+\end{verbatim}
+
+\section*{Building Bibliographies:}
+\noindent \textbf{articles:} An article in a journal, magazine, newspaper, or other periodical which forms a self-contained unit with its own title.
+\begin{verbatim}
+@article{citation-key,
+author = {},
+title = {},
+year = {},
+date = {},
+
+translator = {},
+annotator = {},
+commentator = {},
+subtitle = {},
+titleaddon = {},
+editor = {},
+editora = {},
+editorb = {},
+editorc = {},
+journalsubtitle = {},
+journaltitleaddon = {},
+issuetitle = {},
+issuesubtitle = {},
+issuetitleaddon = {},
+language = {},
+origlanguage = {},
+series = {},
+volume = {},
+number = {},
+eid = {}, 
+issue = {},
+month = {},
+pages = {},
+version = {},
+note = {},
+issn = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{book:} A single-volume book with one or more authors where the authors share credit for the work as a whole.
+\begin{verbatim}
+@book{citation-key,
+author = {},
+title = {}, 
+year = {},
+date = {},
+
+editor = {},
+editora = {},
+editorb = {},
+editorc = {},
+translator = {},
+annotator = {},
+commentator = {},
+introduction = {},
+foreword = {},
+afterword = {},
+subtitle = {},
+titleaddon = {},
+maintitle = {},
+mainsubtitle = {},
+maintitleaddon = {},
+language = {},
+origlanguage = {},
+volume = {},
+part = {},
+edition = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+publisher = {},
+location = {},
+isbn = {},
+eid = {},
+chapter = {},
+pages = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}    
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{multi-volume books:} A multi-volume @book. For backwards compatibility, multi-volume books are also supported by the entry type @book. However, it is advisable to make use of the dedicated entry type @mvbook.
+\begin{verbatim}
+@mvbook{citation-key,
+author = {},
+title = {},
+year = {},
+date = {},
+
+editor = {},
+editora = {},
+editorb = {},
+editorc = {},
+translator = {},
+annotator = {},
+commentator = {},
+introduction = {},
+foreword = {},
+afterword = {},
+subtitle = {},
+titleaddon = {},
+language = {},
+origlanguage = {},
+edition = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+publisher = {},
+location = {},
+isbn = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}    
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{inbook:} A part of a book which forms a self-contained unit with its own title. \\ \textbf{bookinbook:} This type is similar to @inbook but intended for works originally published as a stand-alone book. A typical example are books reprinted in the collected works of an author.\\ \textbf{suppbook:} Supplemental material in a @book. This type is closely related to the @inbook entry type. While @inbook is primarily intended for a part of a book with its own title (e. g., a single essay in a collection of essays by the same author), this type is provided for elements such as prefaces, introductions, forewords, afterwords, etc.
+which often have a generic title only. Style guides may require such items to be formatted differently from other @inbook items. The standard styles will treat this entry type as an alias for @inbook.
+\begin{verbatim}
+@inbook{citation-key,
+author = {},
+title = {},
+booktitle = {},
+year = {},
+date = {},
+
+bookauthor = {},
+editor = {},
+editora = {},
+editorb = {},
+editorc = {},
+translator = {},
+annotator = {},
+commentator = {},
+introduction = {},
+foreword = {},
+afterword = {},
+subtitle = {},
+titleaddon = {},
+maintitle = {},
+mainsubtitle = {},
+maintitleaddon = {},
+booksubtitle = {},
+booktitleaddon = {},
+language = {},
+origlanguage = {},
+volume = {},
+part = {},
+edition = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+publisher = {},
+location = {},
+isbn = {},
+eid = {},
+chapter = {},
+pages = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{booklet:} A book-like work without a formal publisher or sponsoring institution. Use the field howpublished to supply publishing information in free format, if applicable. The field type may be useful as well.
+\begin{verbatim}
+@booklet{citation-key,
+author = {},
+editor = {},
+title = {},
+year = {},
+date = {},
+
+subtitle = {},
+titleaddon = {},
+language = {},
+howpublished = {},
+type = {},
+note = {},
+location = {},
+eid = {},
+chapter = {},
+pages = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{collection:} A single-volume collection with multiple, self-contained contributions by distinct authors which have their own title. The work as a whole has no overall author but it will usually have an editor. \textbf{reference:} A single-volume work of reference such as an encyclopedia or a dictionary. This is a more specific variant of the generic @collection entry type. The standard styles will treat this entry type as an alias for @collection.
+\begin{verbatim}
+@collection{citation-key,
+ editor = {},
+ title = {}, 
+ year = {},
+ date = {},
+
+editora = {},
+editorb = {},
+editorc = {},
+translator = {},
+annotator = {},
+commentator = {},
+introduction = {},
+foreword = {},
+afterword = {},
+subtitle = {},
+titleaddon = {},
+maintitle = {},
+mainsubtitle = {},
+maintitleaddon = {},
+language = {},
+origlanguage = {},
+volume = {},
+part = {},
+edition = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+publisher = {},
+location = {},
+isbn = {},
+eid = {},
+chapter = {},
+pages = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{mvcollection:} A multi-volume @collection. For backwards compatibility, multi-volume collections are also supported by the entry type @collection. However, it is advisable to make use of the dedicated entry type @mvcollection. \textbf{mvreference:} A multi-volume @reference entry. The standard styles will treat this entry type as an alias for @mvcollection. For backwards compatibility, multi-volume references are also supported by the entry type @reference. However, it is advisable to make use of the dedicated entry type @mvreference.
+\begin{verbatim}
+@mvcollection{citation-key,
+editor = {},
+title = {},
+year = {},
+date = {},
+
+editora = {},
+editorb = {},
+editorc = {},
+translator = {},
+annotator = {},
+commentator = {},
+introduction = {},
+foreword = {},
+afterword = {},
+subtitle = {},
+titleaddon = {},
+language = {},
+origlanguage = {},
+edition = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+publisher = {},
+location = {},
+isbn = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{incollection}.A contribution to a collection which forms a self-contained unit with a distinct author and title. The author refers to the title, the editor to the booktitle, i.e.,the title of the collection. \textbf{suppcollection:} Supplemental material in a @collection. This type is similar to @suppbook but related to the @collection entry type. The standard styles will treat this entry type as an alias for @incollection. \textbf{inreference:} An article in a work of reference. This is a more specific variant of the generic @incollection entry type. The standard styles will treat this entry type as an alias for @incollection.
+\begin{verbatim}
+@incollection{citation-key,
+author = {},
+title = {},
+editor = {},
+booktitle = {},
+year = {},
+date = {},
+
+editor = {},
+editora = {},
+editorb = {},
+editorc = {},
+translator = {},
+annotator = {},
+commentator = {},
+introduction = {},
+foreword = {},
+afterword = {},
+subtitle = {},
+titleaddon = {},
+maintitle = {},
+mainsubtitle = {},
+maintitleaddon = {},
+booksubtitle = {},
+booktitleaddon = {},
+language = {},
+origlanguage = {},
+volume = {},
+part = {},
+edition = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+publisher = {},
+location = {},
+isbn = {},
+eid = {},
+chapter = {},
+pages = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{dataset:} A data set or a similar collection of (mostly) raw data.
+\begin{verbatim}
+@dataset{citation-key,
+author = {},
+editor = {},
+title = {},
+year = {},
+date = {},
+
+subtitle = {},
+titleaddon = {},
+language = {},
+edition = {},
+type = {},
+series = {},
+number = {},
+version = {},
+note = {},
+organization = {},
+publisher = {},
+location = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{manual:} Technical or other documentation, not necessarily in printed form. The author or editor is omissible.
+\begin{verbatim}
+@manual{citation-key,
+author = {},
+editor = {},
+title = {},
+year = {},
+date = {},
+
+subtitle = {},
+titleaddon = {},
+language = {},
+edition = {},
+type = {},
+series = {},
+number = {},
+version = {},
+note = {},
+organization = {},
+publisher = {},
+location = {},
+isbn = {},
+eid = {},
+chapter = {},
+pages = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{misc:} A fallback type for entries which do not fit into any other category. Use the field howpublished to supply publishing information in free format, if applicable. The field type may be useful as well. author, editor, and year are omissible. \textbf{software:} Computer software. The standard styles will treat this entry type as an alias for @misc. \textbf{custom[a–f]:} Custom types for special bibliography styles. The standard styles defined no bibliography drivers for these types and will fall back to using the driver for @misc
+\begin{verbatim}
+@misc{citation-key,
+author = {},
+editor = {},
+title = {},
+year = {},
+date = {}
+
+subtitle = {},
+titleaddon = {},
+language = {},
+howpublished = {},
+type = {},
+version = {},
+note = {},
+organization = {},
+location = {},
+month = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{online:} An online resource. author, editor, and year are omissible. This entry type is intended for sources such as web sites which are intrinsically online resources. Note that all entry types support the url field. For example, when adding an article from an online journal, it may be preferable to use the @article type and its url field. \textbf{electronic:}  An alias for @online. \textbf{www:}  An alias for @online, provided for jurabib compatibility. 
+\begin{verbatim}
+@online{citation-key,
+author = {},
+editor = {},
+title = {},
+year = {},
+date = {},
+doi = {},
+eprint = {},
+url = {}
+
+subtitle = {},
+titleaddon = {},
+language = {},
+version = {},
+note = {},
+organization = {},
+month = {},
+addendum = {},
+pubstate = {},
+eprintclass = {},
+eprinttype = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{patent:} A patent or patent request. The number or record token is given in the number field. Use the type field to specify the type and the location field to indicate the scope of the patent, if different from the scope implied by the type. Note that the location field is treated as a key list with this entry type.
+\begin{verbatim}
+@patent{citation-key,
+author = {},
+title = {},
+number = {},
+year = {},
+date = {},
+
+holder = {},
+subtitle = {},
+titleaddon = {},
+type = {},
+version = {},
+location = {},
+note = {},
+month = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{periodical:} An complete issue of a periodical, such as a special issue of a journal. The title of the periodical is given in the title field. If the issue has its own title in addition to the main title of the periodical, it goes in the issuetitle field. The editor is omissible. \textbf{suppperiodical:} Supplemental material in a @periodical. This type is similar to @suppbook but related to the @periodical entry type. The role of this entry type may be more obvious if you bear in mind that the @article type could also be called @inperiodical. This type may be useful when referring to items such as regular columns, obituaries, letters to the editor, etc. which only have a generic title. Style guides may require such items to be formatted differently from articles in the strict sense of the word. The standard styles will treat this entry type as an alias for @article. 
+
+\begin{verbatim}
+@periodical{citation-key,
+editor = {},
+title = {},
+year = {},
+date = {},
+
+editora = {},
+editorb = {},
+editorc = {},
+subtitle = {},
+titleaddon = {},
+issuetitle = {},
+issuesubtitle = {},
+issuetitleaddon = {},
+language = {},
+series = {},
+volume = {},
+number = {},
+issue = {},
+month = {},
+note = {},
+issn = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{proceedings:} A single-volume conference proceedings. This type is very similar to @collection. It supports an optional organization field which holds the sponsoring institution. The editor is omissible.
+\begin{verbatim}
+@proceedings{citation-key,
+title = {},
+year = {},
+date = {},
+
+editor = {},
+subtitle = {},
+titleaddon = {},
+maintitle = {},
+mainsubtitle = {},
+maintitleaddon = {},
+eventtitle = {},
+eventtitleaddon = {},
+eventdate = {},
+venue = {},
+language = {},
+volume = {},
+part = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+organization = {},
+publisher = {},
+location = {},
+month = {},
+isbn = {},
+eid = {},
+chapter = {},
+pages = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{mvproceedings:} A multi-volume @proceedings entry. For backwards compatibility, multi-volume proceedings are also supported by the entry type @proceedings. However, it is advisable to make use of the dedicated entry type @mvproceedings.
+\begin{verbatim}
+@mvproceedings{citation-key,
+title = {},
+year = {},
+date = {},
+
+editor = {},
+subtitle = {},
+titleaddon = {},
+eventtitle = {},
+eventtitleaddon = {},
+eventdate = {},
+venue = {},
+language = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+organization = {},
+publisher = {},
+location = {},
+month = {},
+isbn = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{inproceedings:} An article in a conference proceedings. This type is similar to @incollection. It supports an optional organization field. \textbf{conference:} A legacy alias for @inproceedings.
+\begin{verbatim}
+@inproceedings{citation-key,
+author = {},
+title = {},
+booktitle = {},
+year = {},
+date = {}
+
+editor = {},
+subtitle = {},
+titleaddon = {}, 
+maintitle = {},
+mainsubtitle = {}, 
+maintitleaddon = {},
+booksubtitle = {},
+booktitleaddon = {},
+eventtitle = {},
+eventtitleaddon = {},
+eventdate = {},
+venue = {},
+language = {},
+volume = {},
+part = {},
+volumes = {},
+series = {},
+number = {},
+note = {},
+organization = {},
+publisher = {},
+location = {},
+month = {},
+isbn = {},
+eid = {},
+chapter = {},
+pages = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{report:} A technical report, research report, or white paper published by a university or some other institution. Use the type field to specify the type of report. The sponsoring institution goes in the institution field. \textbf{techreport:}  Similar to @report except that the type field is optional and defaults to the localised term ‘technical report’. You may still use the type field to override that.
+\begin{verbatim}
+@report{citation-key,
+author = {},
+title = {},
+type = {},
+institution = {},
+year = {},
+date = {},
+
+subtitle = {},
+titleaddon = {},
+language = {}, 
+number = {},
+version = {},
+note = {},
+location = {},
+month = {},
+isrn = {},
+eid = {},
+chapter = {},
+pages = {},
+pagetotal = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{set:} An entry set is a group of entries which are cited as a single reference and listed as a single item in the bibliography. The individual entries in the set are separated by \verb|\entrysetpunct|. The biblatex package supports two types of entry sets. Static entry sets are defined in the bib file like any other entry. Dynamic entry sets are defined with \verb|\defbibentryset| on a perdocument/perrefsection basis in the document preamble or the document body. This section deals with the definition of entry sets. Please note that entry sets only make sense for styles which refer to entries by labels such as the provided numeric and alphabetic styles. Styles which refer to entries via names, titles etc. (authoryear, authortitle, verbose etc.) rarely employ sets and do not support them by default when they are cited directly. Custom styles may of course choose to implement some manner of set citation support in any manner they choose. Static entry sets are defined in the bib file like any other entry. Defining an entry set is as simple as adding an entry of type @set. The entry has an entryset field defining the members of the set as a separated list of entry keys:
+\begin{verbatim}
+@Set{citation-key,
+entryset = {key1, key2, key3},
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{thesis:}A thesis written for an educational institution to satisfy the requirements for a degree. Use the type field to specify the type of thesis. \textbf{mastersthesis:} Similar to @thesis except that the type field is optional and defaults to the localised term ‘Master’s thesis’. You may still use the type field to override that. \textbf{phdthesis:} Similar to @thesis except that the type field is optional and defaults to the localised term ‘PhD thesis’. You may still use the type field to override that. 
+\begin{verbatim}
+@thesis{citation-key,
+author = {},
+title = {},
+type = {},
+institution = {},
+year = {},
+date = {},
+
+subtitle = {},
+titleaddon = {},
+language = {},
+note = {},
+location = {},
+month = {},
+isbn = {},
+eid = {}, 
+chapter = {},
+pages = {},
+pagetotal = {}, 
+addendum = {}, 
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{unpublished:} A work with an author and a title which has not been formally published, such as a manuscript or the script of a talk. Use the fields howpublished and note to supply additional information in free format, if applicable.
+\begin{verbatim}
+@unpublished{citation-key,
+author = {},
+title = {},
+year = {},
+date = {},
+
+subtitle = {},
+titleaddon = {},
+type = {},
+eventtitle = {},
+eventtitleaddon = {},
+eventdate = {},
+venue = {},
+language = {},
+howpublished = {},
+note = {},
+location = {},
+isbn = {},
+month = {},
+addendum = {},
+pubstate = {},
+doi = {},
+eprint = {},
+eprintclass = {},
+eprinttype = {},
+url = {},
+urldate = {}
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{xdata:}This entry type is special. @xdata entries hold data which may be inherited by other entries using the xdata field. Entries of this type only serve as data containers; they may not be cited or added to the bibliography. The @xdata entry type serves as a data container holding one or more fields. Data in @xdata entries may be referenced and used by other entries. @xdata entries may not be cited or added to the bibliography, they only serve as a data source for other entries (including other @xdata entries). This data inheritance mechanism is useful for fixed field combinations such as publisher/location and for other frequently used data. Using a separated list of keys in its xdata field, an entry may inherit data from several @xdata entries.
+\begin{verbatim}
+@XData{hup,
+publisher = {Harvard University Press},
+location = {Cambridge, Mass.},
+}
+@Book{...,
+author = {...},
+title = {...},
+date = {...},
+xdata = {hup},
+}
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent \textbf{}
+\begin{verbatim}
+@{citation-key,
+ = {},
+}
+\end{verbatim}
+
+\end{multicols}
+%\bibliographystyle{alpha}
+%\bibliography{sample}
+\end{document}
