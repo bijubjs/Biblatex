@@ -12,3 +12,5 @@ I compiled most commonly used standard referencing materials covering small frac
 
 ## Disclaimer
 All contents in this document are taken from 357 page long [the biblatex package manual]([https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf]). Author only compiled essential parts of the manuals. Read original manual for detailed instructions, excluded items, guidelines, accuracy, and copyright information.
+
+[link]([url](https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf))https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf))
