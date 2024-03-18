@@ -13,7 +13,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks = true, allcolors = blue]{hyperref}
-\usepackage{biblatex}
+\usepackage[style=apa, backend=biber]{biblatex}
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{lastpage}
@@ -34,6 +34,7 @@
 \title{Quick start guide to build bibliography using \LaTeX}
 \author{Bijesh Mishra, Ph.D.}
 \cfoot{Page \thepage\ of \pageref{LastPage}}
+\addbibresource{refs.bib} % Your .bib file
 
 \begin{document}
 \maketitle
@@ -57,10 +58,11 @@ I am summarizing biblatex package. Items are arranged in alphabetical orders--fo
 
 This file allow you to copy the code and use without adding additional code to work properly. Copying formats in this document is also easy. You can simply highlight code that you need and copy by clicking \textquotedblleft \textbf{Ctrl + C}\textquotedblright in Windows or \textquotedblleft \textbf{Command + C}\textquotedblright in Mac. You may see page numbers included if codes are spread in multiple pages--just delete the page number copied with code.
 
-If your author is institutional author you must do \textquotedblleft author = \{\{Name of Organizational Author\}\}\textquotedblright for full name of organizational to appear in the citation. If you have multiple authors, do \textquotedblleft author = \{Last1, First1 and Last2, First2, and Last3, First3\}\textquotedblright. If you want to cite one article do \textquotedblleft \verb|\cite{@citation-key}|\textquotedblright. To cite multiple articles, list multiple citation-keys above separated by commas.
+\section*{Some Useful Hints}
+\verb|author = {{US Forest Service}}| and \verb|(\cite{USFS2020})| give (\cite{USFS2020}), \verb|(\cite{mishra2018})| gives (\cite{mishra2018}). \verb|(\cite{m23a, m23b})| gives (\cite{m23a, m23b}), \verb|\parencite{mishra 2019}| gives \parencite{mishra2019} and \verb|\cite{mishra2018, mishra2019}| gives \cite{mishra2018, mishra2019}.
 
 \section*{What are not included?}
-I compiled most commonly used standard referencing materials covering small fraction of 357 pages manual. Several non-standard referencing materials such as artwork, audio, bibnote, commetry, image, jurisdiction, legislation, legal, letter, movie, music etc. are excluded. Further the definitions of unfamiliar fields like eid, eprint, addeemdum, version, note, etc were also excluded.
+I compiled most commonly used standard referencing materials covering small fraction of 357 pages manual. Several non-standard referencing materials such as artwork, audio, bibnote, commentary, image, jurisdiction, legislation, legal, letter, movie, music etc. are excluded. Further the definitions of unfamiliar fields like eprint, addeemdum, version, note, etc are excluded.
 
 \section*{Disclaimer} 
 All contents in this document are taken from 357 page long \href{https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf}{the biblatex package manual}. I only compiled essential parts of the manuals. Read original manual for detailed instructions, excluded items, guidelines, accuracy, and copyright information.
@@ -75,9 +77,9 @@ All contents in this document are taken from 357 page long \href{https://mirrors
 \end{verbatim}
 
 \section*{Building Bibliographies:}
-\noindent \textbf{articles:} An article in a journal, magazine, newspaper, or other periodical which forms a self-contained unit with its own title.
+\noindent \textbf{articles:} An article in a journal, magazine, newspaper, or other periodical which forms a self-contained unit with its own title. \\
 \begin{verbatim}
-Short Version:
+Shorter Version:
 @article{citation-key,
 author = {},
 title = {},
@@ -92,7 +94,7 @@ url = {},
 urldate = {}
 }
 
-Long Version:
+Longer Version:
 @article{citation-key,
 author = {},
 title = {},
@@ -105,7 +107,6 @@ number = {},
 doi = {},
 url = {},
 urldate = {},
-
 date = {},
 translator = {},
 annotator = {},
